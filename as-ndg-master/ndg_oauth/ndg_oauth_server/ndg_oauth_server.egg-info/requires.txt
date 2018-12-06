@@ -1,8 +1,0 @@
-Beaker
-Genshi
-PasteScript
-WebOb
-repoze.who
-
-[slcs_support]
-MyProxyClient
