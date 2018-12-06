@@ -2,3 +2,7 @@
 *.iml
 .project
 .classpath
+service-master/target/**
+service-master/target/
+client-master/target/
+client-master/target/**
