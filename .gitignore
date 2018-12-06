@@ -6,3 +6,7 @@ service-master/target/**
 service-master/target/
 client-master/target/
 client-master/target/**
+service-master/.settings
+service-master/.settings/**
+client-master/.settings
+client-master/.settings/**
