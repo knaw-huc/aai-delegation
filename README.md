@@ -1,1 +1,1 @@
-# aai-delegation
+# Test on AAI delegation for VRE

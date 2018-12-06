@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+  service:
+    build: ./service-master
+    container_name: service
+    volumes:
+      - ./service-master:/tmp/source
+    ports:
+      - 8080:8080
+    tty: true
+    working_dir: /tmp/source
+    command: /tmp/source/docker-run-deployment.sh
+
+  client:
+    build: ./client-master
+    container_name: client
+    volumes:
+      - ./client-master:/tmp/source
+      - ${HOME}/.m2/repository:/root/.m2/repository 
+    ports:
+      - 8081:8080
+    tty: true
+    working_dir: /tmp/source
+    command: /tmp/source/docker-run-deployment.sh
+
+  # as:
+  #   build: ./as-ndg-master
+  #   container_name: as
+  #   volumes:
+  #     - ./as-ndg-master:/tmp/source
+  #   ports:
+  #     - 8082:8082
+  #   tty: true
+  #   working_dir: /tmp/source
+  #   command: /tmp/source/docker-run-deployment.sh
+
