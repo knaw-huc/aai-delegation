@@ -35,7 +35,7 @@ public class PlateClient extends HttpServlet
     {
     	try {
     		oauth2RestTemplate.getAccessToken();
-            servePlate(response, readFood(new URI(apiurls), oauth2RestTemplate));
+        servePlate(response, readFood(new URI(apiurls), oauth2RestTemplate));
     	} catch(URISyntaxException e) {
     		throw new ServletException(e);
     	}
@@ -48,8 +48,17 @@ public class PlateClient extends HttpServlet
     	rest.getMessageConverters().clear();
     	rest.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
     	// return data as list of strings
-    	ArrayList<String> data = rest.getForObject(url, ArrayList.class);
-    	return data.toArray(new String[]{});
+      ArrayList<String> data = rest.getForObject(url, ArrayList.class);
+
+
+      if (data.toArray(new String[]{}) != null) {
+        return data.toArray(new String[]{});
+      } else {
+        String[] dataArray = new String[2];
+        dataArray[0] = "new fruit1";
+        dataArray[1] = "new fruit2";
+        return dataArray;
+    }
     }
 
     // output html

@@ -10,3 +10,6 @@ service-master/.settings
 service-master/.settings/**
 client-master/.settings
 client-master/.settings/**
+
+client-master/src/main/webapp/WEB-INF/prod-spring-servlet.xml
+service-master/src/main/webapp/WEB-INF/prod-spring-servlet.xml
